@@ -1,12 +1,14 @@
 /* eslint-disable prettier/prettier */
+import 'react-native-gesture-handler';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Text } from 'react-native';
+import { StackNavigator } from './src/navigator/StackNavigator';
 
 export const App = () => {
   return (
     <NavigationContainer>
-      <Text>Hello, World</Text>
+      <StackNavigator />
     </NavigationContainer>
   );
-}
+};
+
