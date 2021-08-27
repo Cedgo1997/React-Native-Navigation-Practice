@@ -31,4 +31,15 @@ export const styles = StyleSheet.create({
         alignSelf: 'center',
         marginTop: 10,
     },
+    drawerItemsContainer: {
+        alignContent: 'center',
+    },
+    drawerItem: {
+        marginVertical: 10,
+        backgroundColor: 'rgba(0,0,0,0.1)'
+    },
+    drawerText: {
+        fontSize: 20,
+        textAlign: 'center'
+    }
 });
