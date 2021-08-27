@@ -1,15 +1,16 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Text } from 'react-native';
-import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { styles } from '../theme/appTheme';
 
 export const SettingsScreen = () => {
 
     const insets = useSafeAreaInsets();
 
     return (
-        <SafeAreaView style={{marginTop: insets.top}}>
-            <Text>Settings Screen</Text>
-        </SafeAreaView>
+        <View  style={{ marginTop: insets.top }}>
+            <Text style={styles.title}>Settings Screen</Text>
+        </View>
     );
 };
