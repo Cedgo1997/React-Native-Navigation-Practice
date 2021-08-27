@@ -10,7 +10,7 @@ export const Pagina2Screen = () => {
 
     return (
         <View style={styles.globalMargin}>
-            <Text>Pagina2Screen</Text>
+            <Text style={styles.title}>Pagina2Screen</Text>
             <Button title="Ir a página 3" onPress={() => navigation.navigate('Pagina3Screen')} />
         </View>
     );
