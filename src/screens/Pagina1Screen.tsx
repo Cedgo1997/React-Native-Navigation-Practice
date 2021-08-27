@@ -1,13 +1,28 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import { StackScreenProps } from '@react-navigation/stack';
+import { DrawerScreenProps } from '@react-navigation/drawer';
+/* import { StackScreenProps } from '@react-navigation/stack';*/
 import React from 'react';
-import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { useEffect } from 'react';
+import { Button, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { styles } from '../theme/appTheme';
 
-interface Props extends StackScreenProps<any, any> { }
+/* interface Props extends StackScreenProps<any, any> { } */
+interface Props extends DrawerScreenProps<any, any> { }
 
 export const Pagina1Screen = ({ navigation }: Props) => {
+
+    const { width, height } = useWindowDimensions();
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerLeft: () => (
+                width < height && (<Button title="Menu" onPress={() => { navigation.toggleDrawer() }} />)
+            ),
+        });
+    }, [width, height, navigation]);
+
+
     return (
         <View style={styles.globalMargin}>
             <Text style={styles.title}>Pagina1Screen</Text>
