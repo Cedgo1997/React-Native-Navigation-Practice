@@ -4,7 +4,7 @@ import React from 'react';
 import { Button, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from '../theme/appTheme';
 
-interface Props extends StackScreenProps<any, any> { };
+interface Props extends StackScreenProps<any, any> { }
 
 export const Pagina1Screen = ({ navigation }: Props) => {
     return (
@@ -20,6 +20,14 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                 })}
             >
                 <Text>Pedro</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('PersonaScreen', {
+                    id: 2,
+                    nombre: 'Juan',
+                })}
+            >
+                <Text>Juan</Text>
             </TouchableOpacity>
         </View>
     );
