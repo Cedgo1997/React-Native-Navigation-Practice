@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
 import { SettingsScreen } from '../screens/SettingsScreen';
@@ -8,6 +7,7 @@ import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-
 import { styles } from '../theme/appTheme';
 
 const Drawer = createDrawerNavigator();
+
 
 export const DrawerCustom = () => {
 
@@ -35,13 +35,13 @@ const DrawerContent = ({ navigation }: DrawerContentComponentProps) => {
             <View style={styles.drawerItemsContainer}>
                 <TouchableOpacity
                     style={styles.drawerItem}
-                    onPress={ () => {navigation.navigate('StackNavigator')} }
+                    onPress={() => { navigation.navigate('StackNavigator') }}
                 >
                     <Text style={styles.drawerText}>Navegación Stack</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.drawerItem}
-                    onPress={ () => {navigation.navigate('SettingsScreen')} }
+                    onPress={() => { navigation.navigate('SettingsScreen') }}
                 >
                     <Text style={styles.drawerText}>Ajustes</Text>
                 </TouchableOpacity>
