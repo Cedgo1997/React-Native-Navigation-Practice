@@ -5,10 +5,10 @@ import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Tab1Screen } from '../screens/Tab1Screen';
-import { Tab2Screen } from '../screens/Tab2Screen';
 import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
+import { TopTabNavigator } from './TopTabNavigator';
 
 
 export const TabNavigator = () => {
@@ -34,8 +34,8 @@ export const TabsIOS = () => {
                             case 'Tab1Screen':
                                 iconName = 'T1';
                                 break;
-                            case 'Tab2Screen':
-                                iconName = 'T2';
+                            case 'TopTabNavigator':
+                                iconName = 'TT';
                                 break;
                             case 'StackNavigator':
                                 iconName = 'ST';
@@ -46,7 +46,7 @@ export const TabsIOS = () => {
                 })
             }>
             <BottomTabIOS.Screen options={{ title: 'Tab 1' }} name="Tab1Screen" component={Tab1Screen} />
-            <BottomTabIOS.Screen options={{ title: 'Tab 2' }} name="Tab2Screen" component={Tab2Screen} />
+            <BottomTabIOS.Screen options={{ title: 'TopTab' }} name="TopTabNavigator" component={TopTabNavigator} />
             <BottomTabIOS.Screen options={{ title: 'Stack' }} name="StackNavigator" component={StackNavigator} />
         </BottomTabIOS.Navigator>
     );
@@ -57,7 +57,7 @@ const BottomTabAndroid = createMaterialBottomTabNavigator();
 const TabsAndroid = () => {
     return (
         <BottomTabAndroid.Navigator sceneAnimationEnabled={true} barStyle={{
-            backgroundColor: colors.primary
+            backgroundColor: colors.primary,
         }} screenOptions={
             ({ route }) => ({
                 tabBarActiveTintColor: colors.primary,
@@ -67,8 +67,8 @@ const TabsAndroid = () => {
                         case 'Tab1Screen':
                             iconName = 'T1';
                             break;
-                        case 'Tab2Screen':
-                            iconName = 'T2';
+                        case 'TopTabNavigator':
+                            iconName = 'TT';
                             break;
                         case 'StackNavigator':
                             iconName = 'ST';
@@ -79,8 +79,8 @@ const TabsAndroid = () => {
             })
         } >
             <BottomTabAndroid.Screen name="Tab1Screen" component={Tab1Screen} />
-            <BottomTabAndroid.Screen name="Tab2Screen" component={Tab2Screen} />
+            <BottomTabAndroid.Screen name="TopTabNavigator" component={TopTabNavigator} />
             <BottomTabAndroid.Screen name="StackNavigator" component={StackNavigator} />
         </BottomTabAndroid.Navigator>
     );
-}
+};
