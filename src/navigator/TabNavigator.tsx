@@ -9,7 +9,7 @@ import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
 import { TopTabNavigator } from './TopTabNavigator';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const TabNavigator = () => {
     return Platform.OS === 'ios' ? <TabsIOS /> : <TabsAndroid />;
@@ -32,16 +32,16 @@ export const TabsIOS = () => {
                         let iconName: string = '';
                         switch (route.name) {
                             case 'Tab1Screen':
-                                iconName = 'T1';
+                                iconName = 'analytics-outline';
                                 break;
                             case 'TopTabNavigator':
-                                iconName = 'TT';
+                                iconName = 'add-circle-outline';
                                 break;
                             case 'StackNavigator':
-                                iconName = 'ST';
+                                iconName = 'attach-outline';
                                 break;
                         }
-                        return (<Text style={{ color }}>{iconName}</Text>);
+                        return (<Text style={{ color }}><Icon name={iconName} size={30} color={color} /></Text>);
                     },
                 })
             }>
@@ -65,16 +65,16 @@ const TabsAndroid = () => {
                     let iconName: string = '';
                     switch (route.name) {
                         case 'Tab1Screen':
-                            iconName = 'T1';
+                            iconName = 'analytics-outline';
                             break;
                         case 'TopTabNavigator':
-                            iconName = 'TT';
+                            iconName = 'add-circle-outline';
                             break;
                         case 'StackNavigator':
-                            iconName = 'ST';
+                            iconName = 'attach-outline';
                             break;
                     }
-                    return (<Text style={{ color }}>{iconName}</Text>);
+                    return (<Text style={{ color }}><Icon name={iconName} size={30} color={color} /></Text>);
                 },
             })
         } >
