@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { SettingsScreen } from '../screens/SettingsScreen';
@@ -23,4 +22,4 @@ export const DrawerNavigator = () => {
             <Drawer.Screen options={{ title: 'Settings' }} name="SettingsScreen" component={SettingsScreen} />
         </Drawer.Navigator>
     );
-}
+};

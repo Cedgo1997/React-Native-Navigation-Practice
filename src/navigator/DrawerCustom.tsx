@@ -2,10 +2,10 @@
 import React from 'react';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
 import { SettingsScreen } from '../screens/SettingsScreen';
-import { StackNavigator } from './StackNavigator';
 import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { styles } from '../theme/appTheme';
 import { TabNavigator } from './TabNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,7 +25,7 @@ export const DrawerCustom = () => {
             <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
         </Drawer.Navigator>
     );
-}
+};
 
 const DrawerContent = ({ navigation }: DrawerContentComponentProps) => {
     return (
@@ -36,17 +36,19 @@ const DrawerContent = ({ navigation }: DrawerContentComponentProps) => {
             <View style={styles.drawerItemsContainer}>
                 <TouchableOpacity
                     style={styles.drawerItem}
-                    onPress={() => { navigation.navigate('TabNavigator') }}
+                    onPress={() => { navigation.navigate('TabNavigator'); }}
                 >
+                    <Icon style={styles.drawerIcon} name="folder-outline" size={30} />
                     <Text style={styles.drawerText}>Navegación Stack</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.drawerItem}
-                    onPress={() => { navigation.navigate('SettingsScreen') }}
+                    onPress={() => { navigation.navigate('SettingsScreen'); }}
                 >
+                    <Icon style={styles.drawerIcon} name="settings-outline" size={30} />
                     <Text style={styles.drawerText}>Ajustes</Text>
                 </TouchableOpacity>
             </View>
         </DrawerContentScrollView>
     );
-}
+};

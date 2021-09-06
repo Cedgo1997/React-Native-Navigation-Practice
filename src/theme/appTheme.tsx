@@ -41,10 +41,14 @@ export const styles = StyleSheet.create({
     },
     drawerItem: {
         marginVertical: 10,
-        backgroundColor: 'rgba(0,0,0,0.1)'
+        backgroundColor: 'rgba(0,0,0,0.1)',
+        flexDirection: 'row',
+    },
+    drawerIcon: {
+        marginHorizontal: 5,
     },
     drawerText: {
         fontSize: 20,
-        textAlign: 'center'
-    }
+        textAlign: 'center',
+    },
 });

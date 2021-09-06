@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Tab1Screen } from '../screens/Tab1Screen';
 import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme/appTheme';
-import { Platform, Text } from 'react-native';
+import { Platform } from 'react-native';
 import { TopTabNavigator } from './TopTabNavigator';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -41,7 +41,7 @@ export const TabsIOS = () => {
                                 iconName = 'attach-outline';
                                 break;
                         }
-                        return (<Text style={{ color }}><Icon name={iconName} size={30} color={color} /></Text>);
+                        return (<Icon name={iconName} size={20} color={color} />);
                     },
                 })
             }>
@@ -74,7 +74,7 @@ const TabsAndroid = () => {
                             iconName = 'attach-outline';
                             break;
                     }
-                    return (<Text style={{ color }}><Icon name={iconName} size={30} color={color} /></Text>);
+                    return (<Icon name={iconName} size={20} color={color} />);
                 },
             })
         } >

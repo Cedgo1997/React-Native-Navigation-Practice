@@ -1,10 +1,11 @@
-/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
 import { DrawerScreenProps } from '@react-navigation/drawer';
 /* import { StackScreenProps } from '@react-navigation/stack';*/
 import React from 'react';
 import { useEffect } from 'react';
 import { Button, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from '../theme/appTheme';
 
 /* interface Props extends StackScreenProps<any, any> { } */
@@ -17,7 +18,10 @@ export const Pagina1Screen = ({ navigation }: Props) => {
     useEffect(() => {
         navigation.setOptions({
             headerLeft: () => (
-                width < height && (<Button title="Menu" onPress={() => { navigation.toggleDrawer() }} />)
+                width < height && (
+                    <TouchableOpacity onPress={() => { navigation.toggleDrawer(); }}>
+                        <Icon style={styles.drawerIcon} name="menu-outline" size={30} />
+                    </TouchableOpacity>)
             ),
         });
     }, [width, height, navigation]);
@@ -41,6 +45,7 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                     })}
                     style={styles.bigButton}
                 >
+                    <Icon name="person-outline" color="white" size={30} />
                     <Text style={styles.bigButtonText}>Pedro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -50,6 +55,7 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                     })}
                     style={styles.bigButton}
                 >
+                    <Icon name="person-outline" color="white" size={30} />
                     <Text style={styles.bigButtonText}>Juan</Text>
                 </TouchableOpacity>
             </View>
