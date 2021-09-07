@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 
-import React, { createContext } from 'react';
+import React, { createContext, useReducer } from 'react';
+import { authReducer } from './AuthReducer';
 
 export interface AuthState {
     isLoggedIn: boolean;
@@ -22,10 +23,17 @@ export interface AuthContextProps {
 export const AuthContext = createContext({} as AuthContextProps);
 
 export const AuthProvider = ({ children }: any) => {
+
+    const [authState, dispatch] = useReducer(authReducer, authInitialState);
+
+    const signIn = () => {
+        dispatch({ type: 'signIn' });
+    };
+
     return (
         <AuthContext.Provider value={{
-            authState: authInitialState,
-            signIn: () => { },
+            authState,
+            signIn,
         }}>
             {children}
         </AuthContext.Provider>
