@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 
 import React, { createContext, useReducer } from 'react';
-import { authReducer } from './AuthReducer';
+import { authReducer } from './authReducer';
 
 export interface AuthState {
     isLoggedIn: boolean;
@@ -18,6 +18,7 @@ export const authInitialState: AuthState = {
 export interface AuthContextProps {
     authState: AuthState;
     signIn: () => void;
+    changeFavoriteIcon: (iconName: string) => void;
 }
 
 export const AuthContext = createContext({} as AuthContextProps);
@@ -30,10 +31,15 @@ export const AuthProvider = ({ children }: any) => {
         dispatch({ type: 'signIn' });
     };
 
+    const changeFavoriteIcon = (iconName: string) => {
+        dispatch({ type: 'changeFavIcon', payload: iconName });
+    };
+
     return (
         <AuthContext.Provider value={{
             authState,
             signIn,
+            changeFavoriteIcon,
         }}>
             {children}
         </AuthContext.Provider>
