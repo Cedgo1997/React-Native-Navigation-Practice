@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { StackScreenProps } from '@react-navigation/stack';
 import React, { useContext, useEffect } from 'react';
 import { Text, View } from 'react-native';

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { useContext } from 'react';
 import { Button, Text, View } from 'react-native';
 import { AuthContext } from '../context/AuthContext';

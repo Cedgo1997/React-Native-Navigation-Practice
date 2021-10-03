@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-
 import React, { createContext, useReducer } from 'react';
 import { authReducer } from './authReducer';
 

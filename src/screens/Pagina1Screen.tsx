@@ -1,7 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react-native/no-inline-styles */
 import { DrawerScreenProps } from '@react-navigation/drawer';
-/* import { StackScreenProps } from '@react-navigation/stack';*/
 import React from 'react';
 import { useEffect } from 'react';
 import { Button, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
